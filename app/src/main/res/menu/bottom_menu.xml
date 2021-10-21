@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/washing"
+        android:icon="@drawable/wash"
+        android:title="세탁기"
+        android:enabled="true" />
+    <item
+        android:id="@+id/cleaning"
+        android:icon="@drawable/cleaning"
+        android:title="청소당번"
+        android:enabled="true" />
+    <item
+        android:id="@+id/document"
+        android:icon="@drawable/file"
+        android:title="외박일지"
+        android:enabled="true" />
+    <item
+        android:id="@+id/notice"
+        android:icon="@drawable/notice"
+        android:title="공지사항"
+        android:enabled="true" />
+</menu>
