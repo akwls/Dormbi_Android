@@ -4,6 +4,7 @@
         android:id="@+id/washing"
         android:icon="@drawable/wash"
         android:title="세탁기"
+        android:checked="true"
         android:enabled="true" />
     <item
         android:id="@+id/cleaning"
