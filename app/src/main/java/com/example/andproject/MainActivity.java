@@ -28,11 +28,10 @@ public class MainActivity extends AppCompatActivity {
         fragment_cleaning = new FragCleaning();
         fragment_document = new FragDocument();
         fragment_notice = new FragNotice();
+        bottomNavigationItemView = findViewById(R.id.bottomNavigationView);
 
         FragmentTransaction frag_manager = getSupportFragmentManager().beginTransaction();
         frag_manager.replace(R.id.main_layout, fragment_wash).commitAllowingStateLoss();
-
-        bottomNavigationItemView = findViewById(R.id.bottomNavigationView);
 
         bottomNavigationItemView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

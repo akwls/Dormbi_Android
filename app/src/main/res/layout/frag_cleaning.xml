@@ -3,9 +3,149 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
-    <TextView
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:background="@drawable/table_border_thick"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:text="This is frag_cleaning" />
+        android:stretchColumns="*">
+        <TableRow
+            android:background="@drawable/table_border_thick">
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="청소구역" />
 
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:text="호실"
+                android:textSize="20sp" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="세면실" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+        <TableRow
+            android:background="@drawable/table_border_thin">
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="세탁실/탈의실" />
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:background="@drawable/table_border_left"
+                android:text="호실" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="샤워실" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+        <TableRow
+            android:background="@drawable/table_border_thin">
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="복도" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="휴게실" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+        <TableRow
+            android:background="@drawable/table_border_thin">
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="계단" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="샤워실" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+        <TableRow
+            android:background="@drawable/table_border_thin">
+            <TextView
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:text="화장실" />
+            <TextView
+                android:background="@drawable/table_border_left"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:text="호실" />
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
