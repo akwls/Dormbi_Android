@@ -1,12 +1,14 @@
 package com.example.andproject.fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +20,7 @@ import com.example.andproject.ReserveActivity;
 public class FragWash extends Fragment {
     ImageView[] machine = new ImageView[3];
     Button machine_reserve;
+    TextView txt4, txt5;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,6 +31,35 @@ public class FragWash extends Fragment {
         machine[2] = view.findViewById(R.id.washing_machine_3);
 
         machine_reserve = view.findViewById(R.id.washing_machine_reserve);
+
+        txt4 = view.findViewById(R.id.txt4);
+        txt5 = view.findViewById(R.id.txt5);
+
+        txt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(txt4.getCurrentTextColor() == Color.parseColor("#808080")) {
+                    txt4.setTextColor(Color.parseColor("#FFFFFF"));
+                    txt4.setBackgroundResource(R.drawable.floor_textview);
+                    txt5.setTextColor(Color.parseColor("#808080"));
+                    txt5.setBackgroundResource(0);
+                }
+
+
+            }
+        });
+
+        txt5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(txt5.getCurrentTextColor() == Color.parseColor("#808080")) {
+                    txt5.setTextColor(Color.parseColor("#FFFFFF"));
+                    txt5.setBackgroundResource(R.drawable.floor_textview);
+                    txt4.setTextColor(Color.parseColor("#808080"));
+                    txt4.setBackgroundResource(0);
+                }
+            }
+        });
 
         machine_reserve.setOnClickListener(new View.OnClickListener() {
             @Override

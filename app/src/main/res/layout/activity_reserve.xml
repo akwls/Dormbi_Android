@@ -7,6 +7,7 @@
     tools:context=".ReserveActivity"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#fff"
     android:padding="10dp">
     <LinearLayout
         android:background="@drawable/table_border_thick"

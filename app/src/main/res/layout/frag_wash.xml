@@ -5,14 +5,44 @@
     android:background="#fff"
     android:padding="10dp">
     <!-- 세탁기 프라그먼트 -->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/linearFloor">
+        <TextView
+            android:padding="7dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="@drawable/floor_textview"
+            android:layout_marginRight="15dp"
+            android:id="@+id/txt4"
+            android:text="4층" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:id="@+id/txt5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="5층" />
+    </LinearLayout>
 
     <LinearLayout
+        android:layout_below="@id/linearFloor"
         android:layout_width="wrap_content"
         android:orientation="vertical"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="30dp">
 
         <ImageView
             android:id="@+id/washing_machine_1"
@@ -58,8 +88,6 @@
     <Button
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:background="@drawable/washing_machine_button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -68,7 +96,8 @@
         android:layout_height="wrap_content"
         android:text="세탁기\n사용등록"
         android:textColor="#fff"
-        android:textStyle="bold" />
+        android:textSize="15sp"
+        android:stateListAnimator="@null" />
 
 
 </RelativeLayout>

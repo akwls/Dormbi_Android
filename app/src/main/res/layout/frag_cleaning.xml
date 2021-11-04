@@ -2,10 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center_horizontal"
+    android:background="#fff"
+    android:paddingTop="10dp"
+    android:paddingRight="50dp"
+    android:paddingLeft="50dp">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/linearFloor">
+        <TextView
+            android:padding="7dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="@drawable/floor_textview"
+            android:layout_marginRight="15dp"
+            android:id="@+id/txt4"
+            android:text="4층" />
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:id="@+id/txt5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="5층" />
+    </LinearLayout>
     <TableLayout
+        android:layout_marginTop="30dp"
         android:background="@drawable/table_border_thick"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="*">
         <TableRow
