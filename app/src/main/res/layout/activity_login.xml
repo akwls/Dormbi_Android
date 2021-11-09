@@ -40,7 +40,6 @@
                 android:text="아이디" />
             <EditText
                 android:id="@+id/join_id"
-                android:backgroundTint="#000"
                 android:theme="@style/EditTheme"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -63,8 +62,8 @@
                 android:layout_height="wrap_content"
                 android:text="비밀번호" />
             <EditText
+                android:inputType="textPassword"
                 android:id="@+id/join_password"
-                android:backgroundTint="#000"
                 android:theme="@style/EditTheme"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
@@ -77,6 +76,7 @@
             android:orientation="horizontal"
             android:gravity="center_horizontal">
             <Button
+                android:id="@+id/btnJoin"
                 android:layout_marginRight="30dp"
                 android:textColor="#000"
                 android:layout_marginTop="25dp"
@@ -91,6 +91,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true" />
             <Button
+                android:id="@+id/btnLogin"
                 android:textColor="#fff"
                 android:layout_marginTop="25dp"
                 android:paddingLeft="30dp"

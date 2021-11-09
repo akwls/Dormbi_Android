@@ -41,7 +41,6 @@
             <EditText
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_id"
-                android:backgroundTint="#000"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,9 +62,9 @@
                 android:layout_height="wrap_content"
                 android:text="비밀번호" />
             <EditText
+                android:inputType="textPassword"
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_password"
-                android:backgroundTint="#000"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,9 +99,9 @@
             </LinearLayout>
 
             <EditText
+                android:inputType="textPassword"
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_password_check"
-                android:backgroundTint="#000"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -126,7 +125,6 @@
             <EditText
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_name"
-                android:backgroundTint="#000"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -161,9 +159,9 @@
             </LinearLayout>
 
             <EditText
+                android:inputType="numberDecimal"
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_student_num"
-                android:backgroundTint="#000"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -185,9 +183,9 @@
                 android:layout_height="wrap_content"
                 android:text="전화번호" />
             <EditText
+                android:inputType="phone"
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_tel"
-                android:backgroundTint="#000"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -222,9 +220,9 @@
             </LinearLayout>
 
             <EditText
+                android:inputType="phone"
                 android:theme="@style/EditTheme"
                 android:id="@+id/join_parent_tel"
-                android:backgroundTint="#000"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

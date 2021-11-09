@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndProject</string>
+    <string name="app_name">돔비</string>
     <array name="country">
         <item>서울</item>
         <item>경기</item>

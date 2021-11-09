@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/action_bar" />
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/linear_background_white"
+        android:padding="20dp"
+        android:elevation="10dp">
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/imgUserCircle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_account_circle_black_24dp" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/txtName"
+            android:layout_toRightOf="@id/imgUserCircle"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2107 김하진"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000" />
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="415호"
+            android:id="@+id/txtEmail"
+            android:layout_below="@id/txtName"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:layout_toRightOf="@+id/imgUserCircle" />
+        <TextView
+            android:id="@+id/txtRank"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/imgUserCircle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:text="거주 지역 : 경기" />
+        <TextView
+            android:id="@+id/txtProblem"
+            android:layout_marginTop="7dp"
+            android:layout_below="@id/txtRank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:text="세탁기 시간 : 화요일 / 21:20~22:30 / 3번 세탁기" />
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_marginTop="7dp"
+            android:layout_below="@id/txtProblem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:text="상점 : 1점 / 벌점 : 0점" />
+    </RelativeLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtRecord"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상벌점 기록하기"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/txtOut"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="기숙사 퇴소 처리"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/txtVersion"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="앱 버전 정보"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+</LinearLayout>

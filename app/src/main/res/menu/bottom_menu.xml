@@ -21,4 +21,9 @@
         android:icon="@drawable/notice"
         android:title="공지사항"
         android:enabled="true" />
+    <item
+        android:id="@+id/user"
+        android:icon="@drawable/user1"
+        android:title="마이페이지"
+        android:enabled="true" />
 </menu>
