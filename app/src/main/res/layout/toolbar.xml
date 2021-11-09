@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
-
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
@@ -22,15 +21,9 @@
             android:textSize="25dp"
             android:textStyle="bold"
             android:id="@+id/action_bar_title"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:textColor="#000" />
-        <TextView
-            android:textColor="#808080"
-            android:id="@+id/action_bar_subtitle"
-            android:layout_toRightOf="@id/action_bar_title"
-            android:layout_alignBottom="@+id/action_bar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
     </RelativeLayout>
 
 

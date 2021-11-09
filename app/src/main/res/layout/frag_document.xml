@@ -1,89 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff">
     <include
         android:id="@+id/action_bar"
         layout="@layout/toolbar" />
-    <LinearLayout
-        android:layout_below="@id/action_bar"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="wrap_content">
         <LinearLayout
+            android:layout_below="@id/action_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="10dp">
             <TextView
-                android:textSize="18sp"
-                android:textColor="#000"
+                android:layout_marginBottom="10dp"
+                android:textColor="#808080"
+                android:id="@+id/action_bar_subtitle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="외박 여부" />
-            <CheckBox
-                android:buttonTint="@color/colorMain"
-                android:id="@+id/chkOut"
-                android:layout_width="wrap_content"
+                android:text="외박일지는 지방학생만 작성 가능합니다."
                 android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:visibility="invisible"
-            android:id="@+id/linearCalendar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_marginTop="10dp"
+            <LinearLayout
+                android:layout_marginLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_marginRight="20dp"
-                android:text="외박 기간" />
-            <CalendarView
-                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="외박 여부" />
+                <CheckBox
+                    android:buttonTint="@color/colorMain"
+                    android:id="@+id/chkOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/linearCalendar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:text="외박 기간" />
+                <CalendarView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearTel"
-            android:visibility="invisible"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:textSize="18sp"
-                android:textColor="#000"
+            <LinearLayout
+                android:paddingLeft="10dp"
+                android:id="@+id/linearTel"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="부모님 연락처" />
+                <EditText
+                    android:id="@+id/edtTel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <Button
+                android:visibility="gone"
+                android:layout_gravity="right"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/washing_machine_button"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="부모님 연락처" />
-            <EditText
-                android:id="@+id/edtTel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:text="작성 완료"
+                android:textSize="15sp"
+                android:stateListAnimator="@null"
+                android:textColor="#fff" />
+
         </LinearLayout>
+    </ScrollView>
 
-    </LinearLayout>
-    <Button
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:background="@drawable/washing_machine_button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:id="@+id/washing_machine_reserve"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="작성 완료"
-        android:textSize="15sp"
-        android:stateListAnimator="@null"
-        android:textColor="#fff" />
-
-
-</RelativeLayout>
+</LinearLayout>

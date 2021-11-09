@@ -32,7 +32,6 @@
             android:id="@+id/txt1"
             android:text="월" />
         <TextView
-            android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:paddingRight="12dp"
             android:paddingLeft="12dp"
@@ -45,7 +44,6 @@
             android:textStyle="bold"
             android:text="화" />
         <TextView
-            android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:paddingRight="12dp"
             android:paddingLeft="12dp"
@@ -58,7 +56,6 @@
             android:textStyle="bold"
             android:text="수" />
         <TextView
-            android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:paddingRight="12dp"
             android:paddingLeft="12dp"
@@ -71,7 +68,6 @@
             android:textStyle="bold"
             android:text="목" />
         <TextView
-            android:layout_marginLeft="10dp"
             android:textSize="20sp"
             android:paddingRight="12dp"
             android:paddingLeft="12dp"
@@ -83,6 +79,30 @@
             android:textColor="#808080"
             android:textStyle="bold"
             android:text="금" />
+        <TextView
+            android:textSize="20sp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:id="@+id/txt6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="토" />
+        <TextView
+            android:textSize="20sp"
+            android:paddingRight="12dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:id="@+id/txt7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="일" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/table"
@@ -96,8 +116,7 @@
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:stretchColumns="*">
-        <TableRow
-            android:background="@drawable/table_border_thinner">
+        <TableRow>
             <TextView
                 android:background="@drawable/table_border_thinner"
                 android:padding="10dp"
@@ -120,9 +139,10 @@
                 android:text="3" />
         </TableRow>
         <TableRow
-            android:background="@drawable/table_border_thinner"
             android:gravity="center">
             <TextView
+                android:layout_height="match_parent"
+                android:background="@drawable/table_border_thinner"
                 android:gravity="center"
                 android:text="19:00~\n  20:10" />
             <TextView
@@ -146,9 +166,10 @@
                 android:text="401호" />
         </TableRow>
         <TableRow
-            android:background="@drawable/table_border_thinner"
             android:gravity="center">
             <TextView
+                android:layout_height="match_parent"
+                android:background="@drawable/table_border_thinner"
                 android:gravity="center"
                 android:text="20:10~\n  21:20" />
             <TextView
@@ -174,9 +195,10 @@
                 android:text="401호" />
         </TableRow>
         <TableRow
-            android:background="@drawable/table_border_thinner"
             android:gravity="center">
             <TextView
+                android:layout_height="match_parent"
+                android:background="@drawable/table_border_thinner"
                 android:gravity="center"
                 android:text="21:20~\n  22:30" />
             <TextView
@@ -200,6 +222,16 @@
         </TableRow>
 
     </TableLayout>
+
     </LinearLayout>
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#808080"
+        android:id="@+id/action_bar_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/table"
+        android:text="예약하려면 빈칸을 클릭하세요."
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

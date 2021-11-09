@@ -8,6 +8,7 @@
     android:paddingRight="50dp"
     android:paddingLeft="50dp">
     <LinearLayout
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,8 +37,69 @@
             android:textStyle="bold"
             android:text="5층" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:id="@+id/linearWeek">
+        <TextView
+            android:layout_marginRight="5dp"
+            android:padding="7dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="@drawable/floor_textview"
+            android:id="@+id/txtw1"
+            android:text="1주" />
+        <TextView
+            android:layout_marginRight="5dp"
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:id="@+id/txtw2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="2주" />
+        <TextView
+            android:layout_marginRight="5dp"
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:id="@+id/txtw3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="3주" />
+        <TextView
+            android:layout_marginRight="5dp"
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:id="@+id/txtw4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="4주" />
+        <TextView
+            android:textSize="20sp"
+            android:padding="7dp"
+            android:id="@+id/txtw5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:text="5주" />
+    </LinearLayout>
+
     <TableLayout
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/table_border_thick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

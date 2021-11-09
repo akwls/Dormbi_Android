@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -23,6 +24,7 @@ public class FragDocument extends Fragment {
     LinearLayout linearCalendar, linearTel;
     CalendarView calendarView;
     androidx.appcompat.widget.Toolbar tb;
+    Button btnSubmit;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,14 +36,11 @@ public class FragDocument extends Fragment {
         linearTel = view.findViewById(R.id.linearTel);
         tb = view.findViewById(R.id.toolbar) ;
         ((AppCompatActivity)getActivity()).setSupportActionBar(tb);
+        btnSubmit = view.findViewById(R.id.btnSubmit);
 
         TextView action_bar_title = view.findViewById(R.id.action_bar_title);
-        TextView action_bar_subtitle = view.findViewById(R.id.action_bar_subtitle);
 
         action_bar_title.setText("외박일지");
-        action_bar_subtitle.setText("지방 학생들만 작성 가능합니다.");
-
-
 
         chkOut.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -49,10 +48,13 @@ public class FragDocument extends Fragment {
                 if(b) {
                     linearCalendar.setVisibility(View.VISIBLE);
                     linearTel.setVisibility(View.VISIBLE);
+                   btnSubmit.setVisibility(View.VISIBLE);
+
                 }
                 else {
-                    linearCalendar.setVisibility(View.INVISIBLE);
-                    linearTel.setVisibility(View.INVISIBLE);
+                    linearCalendar.setVisibility(View.GONE);
+                    linearTel.setVisibility(View.GONE);
+                    btnSubmit.setVisibility(View.GONE);
                 }
             }
         });
