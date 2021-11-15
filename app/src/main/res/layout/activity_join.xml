@@ -105,7 +105,7 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#fff" />
+                android:textColor="#000" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -266,9 +266,17 @@
             android:layout_height="wrap_content"
             android:text="회원가입"
             android:textSize="15dp"
+            android:id="@+id/btnJoin"
             android:background="@drawable/button_join"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
+        <ProgressBar
+            android:layout_marginTop="10dp"
+            android:id="@+id/join_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
 
 
     </LinearLayout>
