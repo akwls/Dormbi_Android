@@ -146,19 +146,22 @@
                 android:gravity="center"
                 android:text="19:00~\n  20:10" />
             <TextView
+                android:id="@+id/wash1_1"
                 android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/table_border_color"
+                android:textColor="#000"
+                android:background="@drawable/table_border_thinner"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
             <TextView
+                android:id="@+id/wash1_2"
                 android:background="@drawable/table_border_thinner"
                 android:textColor="#000"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
             <TextView
+                android:id="@+id/wash1_3"
                 android:background="@drawable/table_border_thinner"
                 android:textColor="#000"
                 android:padding="15dp"
@@ -173,23 +176,26 @@
                 android:gravity="center"
                 android:text="20:10~\n  21:20" />
             <TextView
+                android:id="@+id/wash2_1"
                 android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/table_border_color"
+                android:textColor="#000"
+                android:background="@drawable/table_border_thinner"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
             <TextView
+                android:id="@+id/wash2_2"
                 android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/table_border_color"
+                android:textColor="#000"
+                android:background="@drawable/table_border_thinner"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
             <TextView
+                android:id="@+id/wash2_3"
                 android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/table_border_color"
+                android:textColor="#000"
+                android:background="@drawable/table_border_thinner"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
@@ -202,18 +208,21 @@
                 android:gravity="center"
                 android:text="21:20~\n  22:30" />
             <TextView
+                android:id="@+id/wash3_1"
                 android:background="@drawable/table_border_thinner"
                 android:textColor="#000"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
             <TextView
+                android:id="@+id/wash3_2"
                 android:background="@drawable/table_border_thinner"
                 android:textColor="#000"
                 android:padding="15dp"
                 android:gravity="center"
                 android:text="401호" />
             <TextView
+                android:id="@+id/wash3_3"
                 android:background="@drawable/table_border_thinner"
                 android:textColor="#000"
                 android:padding="15dp"

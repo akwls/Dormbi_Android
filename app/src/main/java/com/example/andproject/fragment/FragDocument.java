@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.andproject.R;
+import com.example.andproject.user.UserInfo;
 
 public class FragDocument extends Fragment {
     CheckBox chkOut;
@@ -41,6 +42,12 @@ public class FragDocument extends Fragment {
         TextView action_bar_title = view.findViewById(R.id.action_bar_title);
 
         action_bar_title.setText("외박일지");
+        chkOut.setEnabled(false);
+
+        String userLoc = UserInfo.getLocation();
+        if(!userLoc.equals("서울") && !userLoc.equals("경기") && !userLoc.equals("인천")) {
+            chkOut.setEnabled(true);
+        }
 
         chkOut.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

@@ -17,10 +17,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.andproject.R;
 import com.example.andproject.RecordActivity;
+import com.example.andproject.user.UserInfo;
+
+import java.nio.file.Path;
 
 public class FragMypage extends Fragment {
     TextView txtTitle;
     TextView txtRecord, txtOut, txtVersion;
+    TextView txtName, txtRoom, txtLoc, txtWash, txtScore;
     View dlgView;
     EditText edtPw;
     @Nullable
@@ -33,6 +37,33 @@ public class FragMypage extends Fragment {
         txtRecord = view.findViewById(R.id.txtRecord);
         txtOut = view.findViewById(R.id.txtOut);
         txtVersion = view.findViewById(R.id.txtVersion);
+
+        txtName = view.findViewById(R.id.txtName);
+        txtRoom = view.findViewById(R.id.txtRoom);
+        txtLoc = view.findViewById(R.id.txtLoc);
+        txtWash = view.findViewById(R.id.txtWash);
+        txtScore = view.findViewById(R.id.txtScore);
+
+        txtName.setText(UserInfo.getNum() + " " +UserInfo.getName());
+        txtRoom.setText(UserInfo.getRoom() + "호");
+        txtLoc.setText("거주 지역 : " + UserInfo.getLocation());
+        String washday = "";
+        switch (UserInfo.getWashday()) {
+            case 1: washday = "월"; break;
+            case 2: washday = "화"; break;
+            case 3: washday = "수"; break;
+            case 4: washday = "목"; break;
+            case 5: washday = "금"; break;
+        }
+        String washtime = "";
+        switch (UserInfo.getWashtime()) {
+            case 1 : washtime = "19:00~20:10"; break;
+            case 2 : washtime = "20:10~21:20"; break;
+            case 3 : washtime = "21:20~22:30"; break;
+        }
+
+        txtWash.setText("세탁기 시간 : " + washday + "요일" + " / " + washtime + " / " + UserInfo.getWashnum() + "번 세탁기");
+        txtScore.setText("상점 : " + UserInfo.getGood() +" / 벌점 : " + UserInfo.getBad());
 
         txtRecord.setOnClickListener(new View.OnClickListener() {
             @Override

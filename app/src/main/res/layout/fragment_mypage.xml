@@ -38,13 +38,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="415호"
-            android:id="@+id/txtEmail"
+            android:id="@+id/txtRoom"
             android:layout_below="@id/txtName"
             android:textColor="#000"
             android:textSize="15sp"
             android:layout_toRightOf="@+id/imgUserCircle" />
         <TextView
-            android:id="@+id/txtRank"
+            android:id="@+id/txtLoc"
             android:layout_marginTop="10dp"
             android:layout_below="@id/imgUserCircle"
             android:layout_width="match_parent"
@@ -53,18 +53,18 @@
             android:textColor="#000"
             android:text="거주 지역 : 경기" />
         <TextView
-            android:id="@+id/txtProblem"
+            android:id="@+id/txtWash"
             android:layout_marginTop="7dp"
-            android:layout_below="@id/txtRank"
+            android:layout_below="@id/txtLoc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:textColor="#000"
             android:text="세탁기 시간 : 화요일 / 21:20~22:30 / 3번 세탁기" />
         <TextView
-            android:id="@+id/txtDate"
+            android:id="@+id/txtScore"
             android:layout_marginTop="7dp"
-            android:layout_below="@id/txtProblem"
+            android:layout_below="@id/txtWash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"

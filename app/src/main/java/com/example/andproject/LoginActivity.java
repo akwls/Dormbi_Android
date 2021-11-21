@@ -19,6 +19,7 @@ import com.example.andproject.user.JoinData;
 import com.example.andproject.user.JoinResponse;
 import com.example.andproject.user.LoginData;
 import com.example.andproject.user.LoginResponse;
+import com.example.andproject.user.UserInfo;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin, btnJoin;
     ServiceApi service;
     private ProgressBar mProgressView;
+    UserInfo user;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +98,15 @@ public class LoginActivity extends AppCompatActivity {
                 showProgress(false);
 
                 if (result.getCode() == 200) {
+                    UserInfo.setNum(result.getNum());
+                    UserInfo.setName(result.getName());
+                    UserInfo.setRoom(result.getRoom());
+                    UserInfo.setLocation(result.getLoc());
+                    UserInfo.setWashday(result.getWashday());
+                    UserInfo.setWashnum(result.getWashnum());
+                    UserInfo.setWashtime(result.getWashtime());
+                    UserInfo.setGood(result.getGood());
+                    UserInfo.setBad(result.getBad());
                     Intent in = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(in);
                 }
