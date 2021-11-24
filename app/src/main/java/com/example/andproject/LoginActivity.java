@@ -26,7 +26,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    public static Activity loginActivity;
+    public static LoginActivity loginActivity;
     EditText login_id, login_pw;
     Button btnLogin, btnJoin;
     ServiceApi service;

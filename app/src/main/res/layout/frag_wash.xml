@@ -52,36 +52,38 @@
             android:src="@drawable/washing_machine_opened" />
 
         <TextView
+            android:id="@+id/txtMachine1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="#000"
-            android:text="401호" />
+            android:textColor="#000" />
 
         <ImageView
             android:layout_marginTop="15dp"
             android:id="@+id/washing_machine_2"
             android:layout_width="160dp"
             android:layout_height="120dp"
+            android:layout_marginRight="20dp"
             android:src="@drawable/washing_machine_closed" />
         <TextView
+            android:id="@+id/txtMachine2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="#000"
-            android:text="401호" />
+            android:textColor="#000" />
         <ImageView
             android:id="@+id/washing_machine_3"
             android:layout_marginTop="15dp"
             android:layout_width="160dp"
             android:layout_height="120dp"
+            android:layout_marginRight="20dp"
             android:src="@drawable/washing_machine_closed" />
         <TextView
+            android:id="@+id/txtMachine3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="#000"
-            android:text="401호" />
+            android:textColor="#000" />
     </LinearLayout>
 
 

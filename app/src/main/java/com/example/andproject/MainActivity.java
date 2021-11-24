@@ -20,13 +20,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     Fragment fragment_wash, fragment_cleaning, fragment_document, fragment_notice, fragment_mypage;
     BottomNavigationView bottomNavigationItemView;
-    LoginActivity la = (LoginActivity)LoginActivity.loginActivity;
+    LoginActivity la = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        la.finish();
+        la = (LoginActivity)LoginActivity.loginActivity;
+        if(la != null) la.finish();
 
 
         fragment_wash = new FragWash();
