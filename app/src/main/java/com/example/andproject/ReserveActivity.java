@@ -318,7 +318,8 @@ public class ReserveActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<WashReserve>> call, Throwable t) {
-
+                Toast.makeText(ReserveActivity.this, "오류 발생", Toast.LENGTH_SHORT).show();
+                Log.d("오류 발생", t.getMessage());
             }
         });
     }

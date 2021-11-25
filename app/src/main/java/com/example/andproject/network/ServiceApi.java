@@ -1,5 +1,8 @@
 package com.example.andproject.network;
 
+import com.example.andproject.Goout;
+import com.example.andproject.GooutResponse;
+import com.example.andproject.clean.CleanRoom;
 import com.example.andproject.user.JoinData;
 import com.example.andproject.user.JoinResponse;
 import com.example.andproject.user.LoginData;
@@ -47,5 +50,11 @@ public interface ServiceApi {
     // 세탁기 시간 예약 GET
     @GET("/wash/reservelist/{date}")
     Call<List<WashReserve>> ReserveList(@Path("date") String date);
+
+    @GET("/clean/cleanlist/{start}")
+    Call<List<CleanRoom>> CleanList(@Path("start") int start);
+
+    @POST("/goout/list")
+    Call<GooutResponse> GooutList(@Body Goout goout);
 
 }
