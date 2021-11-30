@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -40,13 +41,17 @@ public class ReserveActivity extends AppCompatActivity {
     TextView[][] txtWash = new TextView[3][3];
     Integer[][] washID = {{R.id.wash1_1, R.id.wash1_2, R.id.wash1_3}, {R.id.wash2_1, R.id.wash2_2, R.id.wash2_3}, {R.id.wash3_1, R.id.wash3_2, R.id.wash3_3}};
     int dayNum = 0;
+    int floor = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve);
 
+        Intent intent = getIntent();
+        floor = intent.getIntExtra("floor", 4);
         tb = findViewById(R.id.toolbar) ;
+        Log.d("getIntExtra", Integer.toString(floor));
         this.setSupportActionBar(tb);
 
         TextView action_bar_title = findViewById(R.id.action_bar_title);
@@ -94,7 +99,7 @@ public class ReserveActivity extends AppCompatActivity {
         }
 
         setReserveList(todayDate, dayNum+1);
-        // setData(dayNum);
+        setData(dayNum);
 
 
         day[0].setOnClickListener(new View.OnClickListener() {
@@ -111,7 +116,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(0);
             }
-            if(0 == dayNum) TextViewClick();
+            if(0 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
             else blockClick();
             }
         });
@@ -130,7 +135,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(1);
             }
-                if(1 == dayNum) TextViewClick();
+                if(1 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
                 else blockClick();
             }
         });
@@ -149,7 +154,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(2);
             }
-                if(2 == dayNum) TextViewClick();
+                if(2 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
                 else blockClick();
             }
         });
@@ -168,7 +173,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(3);
             }
-                if(3 == dayNum) TextViewClick();
+                if(3 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
                 else blockClick();
             }
         });
@@ -187,7 +192,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(4);
             }
-                if(4 == dayNum) TextViewClick();
+                if(4 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
                 else blockClick();
             }
         });
@@ -205,7 +210,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(5);
             }
-                if(5 == dayNum) TextViewClick();
+                if(5 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
                 else blockClick();
             }
         });
@@ -223,7 +228,7 @@ public class ReserveActivity extends AppCompatActivity {
                 }
                 setData(6);
             }
-                if(6 == dayNum) TextViewClick();
+                if(6 == dayNum && floor == UserInfo.getFloor()) TextViewClick();
                 else blockClick();
             }
         });
@@ -233,7 +238,7 @@ public class ReserveActivity extends AppCompatActivity {
     void getData(final int day) {
         if(day < 6) {
             service = RetrofitClient.getClient().create(ServiceApi.class);
-            Call<List<Wash>> call = service.WashList(day);
+            Call<List<Wash>> call = service.WashList(day, floor);
             call.enqueue(new Callback<List<Wash>>() {
                 @Override
                 public void onResponse(Call<List<Wash>> call, Response<List<Wash>> response) {
@@ -245,7 +250,7 @@ public class ReserveActivity extends AppCompatActivity {
                             int num = wash.getWashNum();
                             String roomNo = wash.getRoomNO();
                             wash_room[day - 1][time - 1][num - 1] = roomNo;
-                            Log.d("washlist", "성공: " + num + " " + time + " " + roomNo);
+                            Log.d("washList", "성공: " + num + " " + time + " " + roomNo + " " + floor);
 
                         }
                     }
@@ -301,7 +306,7 @@ public class ReserveActivity extends AppCompatActivity {
     }
 
     void setReserveList(String date, final int day) {
-        service.ReserveList(date).enqueue(new Callback<List<WashReserve>>() {
+        service.ReserveList(date, floor).enqueue(new Callback<List<WashReserve>>() {
             @Override
             public void onResponse(Call<List<WashReserve>> call, Response<List<WashReserve>> response) {
                 if (response.isSuccessful() && response.body() != null) {
@@ -338,7 +343,7 @@ public class ReserveActivity extends AppCompatActivity {
                             dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    WashReserve wash = new WashReserve(UserInfo.getRoom(), ii+1, jj+1);
+                                    WashReserve wash = new WashReserve(UserInfo.getRoom(), ii+1, jj+1, floor);
                                     Log.d("serreserve", "성공");
                                     setReserve(wash);
                                     wash_room[dayNum][ii][jj] = UserInfo.getRoom();

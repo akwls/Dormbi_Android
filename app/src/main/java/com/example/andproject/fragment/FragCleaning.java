@@ -16,13 +16,19 @@ import androidx.fragment.app.Fragment;
 import com.example.andproject.R;
 import com.example.andproject.ReserveActivity;
 import com.example.andproject.clean.CleanRoom;
+import com.example.andproject.clean.StartRoom;
 import com.example.andproject.network.RetrofitClient;
 import com.example.andproject.network.ServiceApi;
 import com.example.andproject.wash.WashReserve;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,9 +38,11 @@ public class FragCleaning extends Fragment {
     TextView txt4, txt5;
     TextView[] week = new TextView[5];
     Integer[] dayID = {R.id.txtw1, R.id.txtw2, R.id.txtw3, R.id.txtw4, R.id.txtw5 };
-    int startRoom = 1;
+    int startRoom;
     int currentWeek;
     private ServiceApi service;
+    int floor = 4;
+    TextView txtMonth;
     TextView[] txtRoom = new TextView[7];
     Integer[] txtRoomId = {R.id.room1, R.id.room2, R.id.room3, R.id.room4, R.id.room5, R.id.room6, R.id.room7};
 
@@ -45,6 +53,17 @@ public class FragCleaning extends Fragment {
         View view = inflater.inflate(R.layout.frag_cleaning, container, false);
         txt4 = view.findViewById(R.id.txt4);
         txt5 = view.findViewById(R.id.txt5);
+        txtMonth = view.findViewById(R.id.txtMonth);
+
+        TimeZone tz;
+        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat monthFormat = new SimpleDateFormat("M", Locale.KOREAN);
+        tz = TimeZone.getTimeZone("Asia/Seoul");
+        monthFormat.setTimeZone(tz);
+        int month = Integer.parseInt(monthFormat.format(currentTime));
+        getStart(month);
+
+        txtMonth.setText(month+"월");
 
 
         txt4.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +74,7 @@ public class FragCleaning extends Fragment {
                     txt4.setBackgroundResource(R.drawable.floor_textview);
                     txt5.setTextColor(Color.parseColor("#808080"));
                     txt5.setBackgroundResource(0);
+                    floor = 4;
                 }
 
 
@@ -69,6 +89,7 @@ public class FragCleaning extends Fragment {
                     txt5.setBackgroundResource(R.drawable.floor_textview);
                     txt4.setTextColor(Color.parseColor("#808080"));
                     txt4.setBackgroundResource(0);
+                    floor = 5;
                 }
             }
         });
@@ -169,10 +190,25 @@ public class FragCleaning extends Fragment {
 
         return view;
     }
+    void getStart(final int month) {
+        service = RetrofitClient.getClient().create(ServiceApi.class);
+        service.StartRoom(floor, month).enqueue(new Callback<StartRoom>() {
+            @Override
+            public void onResponse(Call<StartRoom> call, Response<StartRoom> response) {
+                startRoom = response.body().getStart();
+                Log.d("startRoom", Integer.toString(startRoom)+" " +Integer.toString(floor));
+            }
+
+            @Override
+            public void onFailure(Call<StartRoom> call, Throwable t) {
+                Log.d("startRoom", "fail");
+            }
+        });
+    }
 
     void getData(final int start) {
         service = RetrofitClient.getClient().create(ServiceApi.class);
-        service.CleanList(start).enqueue(new Callback<List<CleanRoom>>() {
+        service.CleanList(start, floor).enqueue(new Callback<List<CleanRoom>>() {
             @Override
             public void onResponse(Call<List<CleanRoom>> call, Response<List<CleanRoom>> response) {
                 if (response.isSuccessful() && response.body() != null) {

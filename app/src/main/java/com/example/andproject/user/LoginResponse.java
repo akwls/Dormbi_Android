@@ -36,6 +36,17 @@ public class LoginResponse {
     @SerializedName("bad")
     private int bad;
 
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    @SerializedName("floor")
+    private int floor;
+
     public int getCode() {
         return code;
     }
@@ -126,7 +137,7 @@ public class LoginResponse {
         this.bad = bad;
     }
 
-    public LoginResponse(int code, String message, String num, String name, String room, String loc, int washday, int washtime,  int washnum, int good, int bad) {
+    public LoginResponse(int code, String message, String num, String name, String room, String loc, int washday, int washtime,  int washnum, int good, int bad, int floor) {
         this.code = code;
         this.message = message;
         this.num = num;
@@ -138,5 +149,6 @@ public class LoginResponse {
         this.washnum = washnum;
         this.good = good;
         this.bad = bad;
+        this.floor = floor;
     }
 }

@@ -2,7 +2,7 @@ package com.example.andproject.user;
 
 public class UserInfo {
     public static String num, name, location, room;
-    public static int washtime, washday, washnum;
+    public static int washtime, washday, washnum, floor;
     public static int good, bad;
 
     public static String getNum() {
@@ -77,7 +77,15 @@ public class UserInfo {
         UserInfo.bad = bad;
     }
 
-    public UserInfo(String num, String name, String location, String room, int washtime, int washday, int washnum, int good, int bad) {
+    public static int getFloor() {
+        return floor;
+    }
+
+    public static void setFloor(int floor) {
+        UserInfo.floor = floor;
+    }
+
+    public UserInfo(String num, String name, String location, String room, int washtime, int washday, int washnum, int good, int bad, int floor) {
         this.num = num;
         this.name = name;
         this.location = location;
@@ -87,5 +95,6 @@ public class UserInfo {
         this.washnum = washnum;
         this.good = good;
         this.bad = bad;
+        this.floor = floor;
     }
 }

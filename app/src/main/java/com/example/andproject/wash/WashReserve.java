@@ -12,10 +12,22 @@ public class WashReserve {
     @SerializedName("WashTime")
     int WashTime;
 
-    public WashReserve(String roomNO, int washNum,  int washTime) {
+    @SerializedName("floor")
+    int floor;
+
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public WashReserve(String roomNO, int washNum, int washTime, int floor) {
         RoomNO = roomNO;
         WashNum = washNum;
         WashTime = washTime;
+        this.floor = floor;
     }
 
     public String getRoomNO() {

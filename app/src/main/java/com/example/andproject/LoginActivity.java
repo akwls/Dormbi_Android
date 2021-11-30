@@ -99,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (result.getCode() == 200) {
                     UserInfo.setNum(result.getNum());
+                    UserInfo.setFloor(result.getFloor());
                     UserInfo.setName(result.getName());
                     UserInfo.setRoom(result.getRoom());
                     UserInfo.setLocation(result.getLoc());

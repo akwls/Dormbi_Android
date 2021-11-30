@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,17 @@ import androidx.fragment.app.Fragment;
 
 import com.example.andproject.R;
 import com.example.andproject.RecordActivity;
+import com.example.andproject.network.RetrofitClient;
+import com.example.andproject.network.ServiceApi;
+import com.example.andproject.user.JoinResponse;
+import com.example.andproject.user.LoginResponse;
 import com.example.andproject.user.UserInfo;
 
 import java.nio.file.Path;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FragMypage extends Fragment {
     TextView txtTitle;
@@ -27,6 +36,7 @@ public class FragMypage extends Fragment {
     TextView txtName, txtRoom, txtLoc, txtWash, txtScore;
     View dlgView;
     EditText edtPw;
+    ServiceApi service;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,6 +47,7 @@ public class FragMypage extends Fragment {
         txtRecord = view.findViewById(R.id.txtRecord);
         txtOut = view.findViewById(R.id.txtOut);
         txtVersion = view.findViewById(R.id.txtVersion);
+        service = RetrofitClient.getClient().create(ServiceApi.class);
 
         txtName = view.findViewById(R.id.txtName);
         txtRoom = view.findViewById(R.id.txtRoom);
@@ -86,6 +97,19 @@ public class FragMypage extends Fragment {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(getContext(), pw, Toast.LENGTH_SHORT).show();
+                        service.DeleteStudent(UserInfo.getNum(), pw).enqueue(new Callback<JoinResponse>() {
+                            @Override
+                            public void onResponse(Call<JoinResponse> call, Response<JoinResponse> response) {
+                                Log.d("탈퇴", "성공");
+                                if(response.body().getCode() == 200)
+                                    Toast.makeText(getContext(), response.body().getMessage(), Toast.LENGTH_SHORT ).show();
+                            }
+
+                            @Override
+                            public void onFailure(Call<JoinResponse> call, Throwable t) {
+                                Toast.makeText(getContext(), "퇴소 처리 오류", Toast.LENGTH_SHORT ).show();
+                            }
+                        });
                     }
                 });
                 dlg.setNegativeButton("취소", new DialogInterface.OnClickListener() {

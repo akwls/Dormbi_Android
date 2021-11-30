@@ -49,6 +49,9 @@ public class FragWash extends Fragment {
     String[] usingRoom = new String[3];
     TextView[] txtMachine = new TextView[3];
     Integer[] txtMachineId = {R.id.txtMachine1, R.id.txtMachine2, R.id.txtMachine3};
+    int floor = 4;
+    int dayNum, timeNum;
+    String todayDate;
 
 
     @Nullable
@@ -71,7 +74,7 @@ public class FragWash extends Fragment {
         timeFormat.setTimeZone(tz);
         minuteFormat.setTimeZone(tz);
         dateFormat.setTimeZone(tz);
-        String todayDate = dateFormat.format(currentTime);
+        todayDate = dateFormat.format(currentTime);
         int nowHour = Integer.parseInt(timeFormat.format(currentTime));
         int nowMinute = Integer.parseInt(minuteFormat.format(currentTime));
 
@@ -81,8 +84,8 @@ public class FragWash extends Fragment {
         String timeString  = timeFormat.format(currentTime)+minuteFormat.format(currentTime);
         int timeInt = Integer.parseInt(timeString);
 
-        int dayNum = 0;
-        int timeNum = 0;
+        dayNum = 0;
+        timeNum = 0;
 
         for(int i=0; i<7; i++) {
             if(weekday.equals(dayKorean[i])) {
@@ -125,6 +128,8 @@ public class FragWash extends Fragment {
                     txt4.setBackgroundResource(R.drawable.floor_textview);
                     txt5.setTextColor(Color.parseColor("#808080"));
                     txt5.setBackgroundResource(0);
+                    floor = 4;
+                    getData(dayNum, timeNum, todayDate);
                 }
 
 
@@ -139,6 +144,8 @@ public class FragWash extends Fragment {
                     txt5.setBackgroundResource(R.drawable.floor_textview);
                     txt4.setTextColor(Color.parseColor("#808080"));
                     txt4.setBackgroundResource(0);
+                    floor = 5;
+                    getData(dayNum, timeNum, todayDate);
                 }
             }
         });
@@ -147,6 +154,7 @@ public class FragWash extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(getContext(), ReserveActivity.class);
+                in.putExtra("floor", floor);
                 startActivity(in);
             }
         });
@@ -156,7 +164,7 @@ public class FragWash extends Fragment {
     void getData(final int day, final int time, final String date) {
         if(day < 6) {
             service = RetrofitClient.getClient().create(ServiceApi.class);
-            Call<List<WashReserve>> call = service.WashTimeList(day, time, date);
+            Call<List<WashReserve>> call = service.WashTimeList(day, time, date, floor);
             call.enqueue(new Callback<List<WashReserve>>() {
                 @Override
                 public void onResponse(Call<List<WashReserve>> call, Response<List<WashReserve>> response) {
